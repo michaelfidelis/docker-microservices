@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  database: 
+    image: mongo:3.4
+  employee-service:
+    image: employee-service
+    build: ./employee-service/
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
